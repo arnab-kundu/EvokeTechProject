@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.evoketechproject.database.entity.UserEntity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/row_background"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:background="#D3E8F6"
+            android:drawableTint="@color/black"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/sym_action_chat"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="@{user.name}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tvUserEmail"
+            app:layout_constraintEnd_toEndOf="@id/row_background"
+            app:layout_constraintStart_toStartOf="@id/row_background"
+            app:layout_constraintTop_toTopOf="@id/row_background"
+            tools:text="User Name" />
+
+        <TextView
+            android:id="@+id/tvUserEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/sym_action_email"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="@{user.email}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tvUserPhone"
+            app:layout_constraintEnd_toEndOf="@id/row_background"
+            app:layout_constraintStart_toStartOf="@id/row_background"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName"
+            tools:text="User Email" />
+
+        <TextView
+            android:id="@+id/tvUserPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/stat_sys_phone_call"
+            android:drawablePadding="9dp"
+            android:drawableTint="@color/black"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="@{user.phone}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/row_background"
+            app:layout_constraintStart_toStartOf="@id/row_background"
+            app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+            tools:text="Phone Number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
